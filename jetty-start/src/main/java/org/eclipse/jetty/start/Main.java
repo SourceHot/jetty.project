@@ -189,10 +189,12 @@ public class Main
     {
         if (args.getEnabledModules().isEmpty())
         {
-            if (Files.exists(getBaseHome().getBasePath("start.jar")))
+            if (Files.exists(getBaseHome().getBasePath("start.jar"))) {
                 StartLog.error("Do not start with ${jetty.base} == ${jetty.home}!");
-            else
+            }
+            else {
                 StartLog.error("No enabled jetty modules found!");
+            }
             StartLog.info("${jetty.home} = " + getBaseHome().getHomePath());
             StartLog.info("${jetty.base} = " + getBaseHome().getBasePath());
             StartLog.error("Please create and/or configure a ${jetty.base} directory.");
